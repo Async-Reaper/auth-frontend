@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import { loginError, loginFetch, loginSuccess } from "../../store/slices/login/login.slice";
 import { AppDispatch } from "../../store/store";
 import { IUserLogin } from "../../types/userTypes/IUserLogin";
 import { URL } from "../../utils/constants/url.constants";
 
-export const auth = (data: IUserLogin) => {
+export const loginUser = (data: IUserLogin) => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(loginFetch())
@@ -14,7 +14,6 @@ export const auth = (data: IUserLogin) => {
             
             console.log(result)
         } catch (error) {
-            dispatch(loginError(error))
             console.log(error)
         }
     }
