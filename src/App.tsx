@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import WebFont from "webfontloader";
-import FormLogin from "./components/forms/formLogin/FormLogin";
+import FormLogin from "./components/forms/formWrapper/FormLogin";
 
 function App() {
   useEffect(() => {

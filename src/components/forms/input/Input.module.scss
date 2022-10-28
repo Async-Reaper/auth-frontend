@@ -1,5 +1,24 @@
+$border-color: #3F3F3F;
+$border-color-focused:  #107EFF;
+$text-color: #FFFFFF;
+
 .Input {
     padding: 5px 9px;
+    width: 230px;
     outline: none;
-    border:1px solid #3F3F3F;
+    border: transparent;
+    border-bottom: 1px solid $border-color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    background: transparent;
+    color: $text-color;
+}
+
+.Input:focus {
+    border-bottom: 1px solid $border-color-focused;
+}
+
+.Input::placeholder {
+    color: $border-color;
 }

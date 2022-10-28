@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ILoginSlice } from "./login.interface";
+import { ILoginSlice } from "./login.types";
 
 const initialState: ILoginSlice = {
     loading: false,

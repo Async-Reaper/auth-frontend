@@ -1,0 +1,32 @@
+.Button {
+    background: #3137C9;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+    border-radius: 5px;
+    border: transparent;
+    cursor: pointer;
+    width: 64px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    outline: none;
+    transition: all .1s;
+}
+
+.Button:active {
+    background: #171c8a;
+}
+
+@keyframes button {
+    25% {
+        background: #20259e;
+    }
+
+    50% {
+        background: #171c8a;
+    }
+
+    100% {
+        background: #0f1475;
+    }
+}

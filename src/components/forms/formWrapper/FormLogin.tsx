@@ -2,7 +2,9 @@ import React, { FC, useState } from "react";
 import { useTypedDispatch } from "../../../hooks/useTypedDispatch";
 import { loginUser } from "../../../services/api/login";
 import { IUserLogin } from "../../../types/userTypes/IUserLogin";
+import Button from "../../UI/button/Button";
 import Input from "../input/Input";
+import cl from "./FormLogin.module.scss";
 
 const FormLogin: FC = () => {
   const dispatch = useTypedDispatch();
@@ -19,15 +21,19 @@ const FormLogin: FC = () => {
     dispatch(loginUser(loginData));
   };
   return (
-    <div>
-      <form onSubmit={(e) => handleLogin(e)}>
-        <input type="text" onChange={(e) => setLogin(e.target.value)} />
+    <div className={cl.FormWrapper}>
+      <form className={cl.FormLogin} onSubmit={(e) => handleLogin(e)}>
+        <Input
+          placeholder="Логин"
+          type="text"
+          onChange={(e) => setLogin(e.target.value)}
+        />
         <Input
           placeholder="Пароль"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <Button type="submit">Войти</Button>
       </form>
     </div>
   );

@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { IInputProps } from "./Input.interface";
-// import cl from "./Input.module.scss";
+import { IInputProps } from "./Input.types";
+import cl from "./Input.module.scss";
 
 const Input: FC<IInputProps> = ({ type, placeholder, onChange }) => {
   return (
     <input
-      // className={cl.Input}
+      className={cl.Input}
       type={type}
       placeholder={placeholder}
       onChange={onChange}
