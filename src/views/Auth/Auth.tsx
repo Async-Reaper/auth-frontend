@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import FormSignup from "../../components/localComponents/formSignup/FormSignup";
 
 const Auth: FC = () => {
   const [checked, setChecked] = useState<boolean>(true);
@@ -9,7 +10,11 @@ const Auth: FC = () => {
     setChecked(!checked);
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <FormSignup />
+    </div>
+  );
 };
 
 export default Auth;

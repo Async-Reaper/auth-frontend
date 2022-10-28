@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ILoginSlice } from "./login.types";
+import { IAuthSlice } from "./auth.types";
 
-const initialState: ILoginSlice = {
+const initialState: IAuthSlice = {
     loading: false,
     success: false,
     error: false,
@@ -9,22 +9,22 @@ const initialState: ILoginSlice = {
     answerError: ''
 }
 
-const loginSlice = createSlice({
-    name: 'Login',
+const authSlice = createSlice({
+    name: 'Auth',
     initialState,
     reducers: {
-        loginFetch(state) {
+        authFetch(state) {
             state.loading = true;
             state.success = false;
             state.error = false;
         },
-        loginSuccess(state, action) {
+        authSuccess(state, action) {
             state.loading = false;
             state.error = false;
             state.success = true;
             state.answerSuccess = action.payload;
         },
-        loginError(state, action) {
+        authError(state, action) {
             state.loading = false;
             state.error = true;
             state.success = false;
@@ -33,5 +33,5 @@ const loginSlice = createSlice({
     }
 })
 
-export default loginSlice.reducer;
-export const { loginFetch, loginSuccess, loginError } = loginSlice.actions;
+export default authSlice.reducer;
+export const { authFetch, authSuccess, authError } = authSlice.actions;

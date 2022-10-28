@@ -1,5 +1,5 @@
-import axios, {AxiosError} from "axios";
-import { loginError, loginFetch, loginSuccess } from "../../store/slices/login/login.slice";
+import axios from "axios";
+import { authFetch, authSuccess } from "../../store/slices/auth/auth.slice";
 import { AppDispatch } from "../../store/store";
 import { IUserLogin } from "../../types/userTypes/IUserLogin";
 import { URL } from "../../utils/constants/url.constants";
@@ -7,10 +7,10 @@ import { URL } from "../../utils/constants/url.constants";
 export const loginUser = (data: IUserLogin) => {
     return async (dispatch: AppDispatch) => {
         try {
-            dispatch(loginFetch())
-            const response = await axios.post(URL.login, data)
+            dispatch(authFetch())
+            const response = await axios.post(URL.loginURL, data)
             const result = response.data;
-            dispatch(loginSuccess(result.message))
+            dispatch(authSuccess(result.message))
             
             console.log(result)
         } catch (error) {

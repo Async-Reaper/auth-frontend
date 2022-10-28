@@ -1,4 +1,4 @@
-export interface ILoginSlice {
+export interface IAuthSlice {
     loading: boolean;
     success: boolean;
     error: boolean;

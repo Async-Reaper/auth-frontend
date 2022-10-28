@@ -1,3 +1,4 @@
 export interface IURL {
-    loginUser: string;
+    loginURL: string;
+    signupURL: string;
 }
