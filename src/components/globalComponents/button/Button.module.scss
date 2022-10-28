@@ -1,0 +1,22 @@
+$btn-backgroud: #3137C9;
+$btn-active: #151a8f;
+$btn-text: #fff;
+
+.Button {
+    width: 64px;
+    height: 30px;
+    background: $btn-backgroud;
+    box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+    border-radius: 5px;
+    border: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: $btn-text;
+    transition: all .3;
+}
+
+.Button:active {
+    background: $btn-active;
+}

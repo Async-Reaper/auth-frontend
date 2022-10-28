@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import WebFont from "webfontloader";
-import FormLogin from "./components/forms/formWrapper/FormLogin";
+import FormLogin from "./components/localComponents/formLogin/FormLogin";
+import FormSignup from "./components/localComponents/formSignup/FormSignup";
+import Auth from "./views/Auth/Auth";
 
 function App() {
   useEffect(() => {
@@ -13,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <FormLogin />
+      <Auth />
     </div>
   );
 }

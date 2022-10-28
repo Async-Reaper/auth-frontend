@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export interface IButton {
+    type: 'button' | 'submit';
     children: ReactNode;
-    type?: 'button' | 'submit';
+    onClick?: () => void;
 }

@@ -1,8 +1,7 @@
 export interface IUserSignup {
-    id: number;
     name: string;
     surname: string;
-    email: number;
+    email: string;
     login: string;
     password: string;
 }
