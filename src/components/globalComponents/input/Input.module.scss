@@ -14,12 +14,10 @@ $text-color: #FFFFFF;
     background: transparent;
     color: $text-color;
     transition: all .15s;
-}
-
-.Input:focus {
-    border-bottom: 1px solid $border-color-focused;
-}
-
-.Input::placeholder {
-    color: $border-color;
+    &:focus {
+        border-bottom: 1px solid $border-color-focused;
+    }
+    &::placeholder {
+        color: $border-color;
+    }
 }

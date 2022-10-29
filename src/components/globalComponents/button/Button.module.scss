@@ -15,8 +15,7 @@ $btn-text: #fff;
     line-height: 14px;
     color: $btn-text;
     transition: all .15s;
-}
-
-.Button:active {
-    background: $btn-active;
+    &:active {
+        background: $btn-active;
+    }
 }

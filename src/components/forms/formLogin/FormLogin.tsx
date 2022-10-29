@@ -11,35 +11,31 @@ import { loginUser } from "services/api/login";
 import { IUserLogin } from "types/userTypes/IUserLogin";
 
 import cl from "./FormLogin.module.scss";
+import { useInput } from "hooks/useInput";
+import ErrorText from "components/globalComponents/errorText/ErrorText";
+import FormLoginTextFields from "./FormLoginTextFields";
 
 const FormLogin: FC = () => {
   const dispatch = useTypedDispatch();
-  const [login, setLogin] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const login = useInput("", { isEmpty: true });
+  const password = useInput("", { isEmpty: true });
 
   const loginData: IUserLogin = {
-    login,
-    password,
+    login: login.value,
+    password: password.value,
   };
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(loginUser(loginData));
+    login.onBlur();
+    password.onBlur();
+    if (!login.isEmpty && !password.isEmpty) {
+      dispatch(loginUser(loginData));
+    }
   };
   return (
     <FormWrapper onSubmit={(e) => handleLogin(e)}>
-      <Input
-        value={login}
-        placeholder="Логин"
-        type="text"
-        onChange={(e) => setLogin(e.target.value)}
-      />
-      <Input
-        value={password}
-        placeholder="Пароль"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <FormLoginTextFields login={login} password={password} />
       <div className={cl.FooterAuth}>
         <Button type="submit">Войти</Button>
         <Link to={"/signup"}>Зарегистрироваться</Link>
