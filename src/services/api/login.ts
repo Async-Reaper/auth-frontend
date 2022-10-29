@@ -11,8 +11,7 @@ export const loginUser = (data: IUserLogin) => {
             const response = await axios.post(URL.loginURL, data)
             const result = response.data;
             dispatch(authSuccess(result.message))
-            
-            console.log(result)
+            localStorage.setItem('token', result.token)            
         } catch (error) {
             console.log(error)
         }

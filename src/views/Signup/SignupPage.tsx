@@ -1,13 +1,13 @@
-import FormLogin from "components/forms/formLogin/FormLogin";
+import FormSignup from "components/forms/formSignup/FormSignup";
 import ContentWrapper from "components/globalComponents/contentWrapper/ContentWrapper";
 import React, { FC } from "react";
 
-const LoginPage: FC = () => {
+const SignupPage: FC = () => {
   return (
     <ContentWrapper>
-      <FormLogin />
+      <FormSignup />
     </ContentWrapper>
   );
 };
 
-export default LoginPage;
+export default SignupPage;

@@ -13,6 +13,7 @@ $text-color: #FFFFFF;
     line-height: 16px;
     background: transparent;
     color: $text-color;
+    transition: all .15s;
 }
 
 .Input:focus {

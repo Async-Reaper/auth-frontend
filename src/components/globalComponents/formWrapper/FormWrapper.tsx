@@ -8,7 +8,6 @@ const FormWrapper: FC<IFormWrapper> = ({ children, onSubmit }) => {
       <form className={cl.Form} onSubmit={onSubmit}>
         {children}
       </form>
-      ;
     </div>
   );
 };
