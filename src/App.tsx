@@ -1,7 +1,7 @@
+import FormLogin from "components/localComponents/formLogin/FormLogin";
+import AppRoute from "components/routes/AppRoute";
 import { useEffect } from "react";
 import WebFont from "webfontloader";
-import FormLogin from "./components/localComponents/formLogin/FormLogin";
-import FormSignup from "./components/localComponents/formSignup/FormSignup";
 import Auth from "./views/Auth/Auth";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <Auth />
+      <AppRoute />
     </div>
   );
 }

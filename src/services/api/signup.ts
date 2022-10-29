@@ -1,5 +1,5 @@
 import axios from "axios"
-import { authFetch } from "../../store/slices/auth/auth.slice"
+import { authFetch, authSuccess } from "../../store/slices/auth/auth.slice"
 import { AppDispatch } from "../../store/store"
 import { IUserSignup } from "../../types/userTypes/IUserSignup"
 import { URL } from "../../utils/constants/url.constants"
@@ -10,7 +10,7 @@ export const signupUser = (data: IUserSignup) => {
             dispatch(authFetch())
             const response = await axios.post(URL.signupURL, data);
             const res = response.data;
-            console.log(res)
+            dispatch(authSuccess(res.message))
         } catch (error) {
             console.log(error)
         }

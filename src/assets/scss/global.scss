@@ -26,6 +26,18 @@ dd {
   margin: 0;
 }
 
+a {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration: none;
+  color: #107EFF;
+  transition: all .3s;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;

@@ -1,10 +1,12 @@
+import Button from "components/globalComponents/button/Button";
+import FormWrapper from "components/globalComponents/formWrapper/FormWrapper";
+import Input from "components/globalComponents/input/Input";
+import { useTypedDispatch } from "hooks/useTypedDispatch";
 import React, { useState } from "react";
-import { useTypedDispatch } from "../../../hooks/useTypedDispatch";
-import { signupUser } from "../../../services/api/signup";
-import { IUserSignup } from "../../../types/userTypes/IUserSignup";
-import Button from "../../globalComponents/button/Button";
-import FormWrapper from "../../globalComponents/formWrapper/FormWrapper";
-import Input from "../../globalComponents/input/Input";
+import { Link } from "react-router-dom";
+import { signupUser } from "services/api/signup";
+import { IUserSignup } from "types/userTypes/IUserSignup";
+import cl from "./FormSignup.module.scss";
 
 const FormSignup = () => {
   const dispatch = useTypedDispatch();
@@ -38,13 +40,13 @@ const FormSignup = () => {
       <Input
         value={surname}
         placeholder="Фамилия"
-        type="password"
+        type="text"
         onChange={(e) => setSurname(e.target.value)}
       />
       <Input
         value={email}
         placeholder="Email"
-        type="password"
+        type="text"
         onChange={(e) => setEmail(e.target.value)}
       />
       <Input
@@ -59,7 +61,10 @@ const FormSignup = () => {
         type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button type="submit">Войти</Button>
+      <div className={cl.FooterAuth}>
+        <Button type="submit">Войти</Button>
+        <Link to={"/"}>Назад</Link>
+      </div>
     </FormWrapper>
   );
 };

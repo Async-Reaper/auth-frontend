@@ -1,13 +1,16 @@
 import React, { FC, useState } from "react";
 
-import { useTypedDispatch } from "../../../hooks/useTypedDispatch";
+import Input from "components/globalComponents/input/Input";
+import Button from "components/globalComponents/button/Button";
+import FormWrapper from "components/globalComponents/formWrapper/FormWrapper";
 
-import { IUserLogin } from "../../../types/userTypes/IUserLogin";
-import { loginUser } from "../../../services/api/login";
+import { useTypedDispatch } from "hooks/useTypedDispatch";
 
-import FormWrapper from "../../globalComponents/formWrapper/FormWrapper";
-import Button from "../../globalComponents/button/Button";
-import Input from "../../globalComponents/input/Input";
+import { Link } from "react-router-dom";
+import { loginUser } from "services/api/login";
+import { IUserLogin } from "types/userTypes/IUserLogin";
+
+import cl from "./FormLogin.module.scss";
 
 const FormLogin: FC = () => {
   const dispatch = useTypedDispatch();
@@ -37,7 +40,10 @@ const FormLogin: FC = () => {
         type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button type="submit">Войти</Button>
+      <div className={cl.FooterAuth}>
+        <Button type="submit">Войти</Button>
+        <Link to={"/signup"}>Зарегистрироваться</Link>
+      </div>
     </FormWrapper>
   );
 };
