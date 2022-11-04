@@ -5,7 +5,7 @@ import HomePage from "views/Home/HomePage";
 const PrivateRoutes: FC = () => {
   return (
     <Routes>
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
     </Routes>
   );
 };

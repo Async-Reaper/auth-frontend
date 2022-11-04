@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 const LoginPage: FC = () => {
   return (
-    <ContentWrapper>
+    <ContentWrapper dataTestId="login-page">
       <FormLogin />
     </ContentWrapper>
   );

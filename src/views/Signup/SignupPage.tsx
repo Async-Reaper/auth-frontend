@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 const SignupPage: FC = () => {
   return (
-    <ContentWrapper>
+    <ContentWrapper dataTestId="signup-page">
       <FormSignup />
     </ContentWrapper>
   );
