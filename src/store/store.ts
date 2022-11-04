@@ -6,9 +6,10 @@ export const rootReducer = combineReducers({
     login: loginSlice
 })
 
-export const setupStore = () => {
+export const setupStore = (initialState?: Object) => {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
+        preloadedState: initialState
     })
 }
 
