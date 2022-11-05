@@ -4,4 +4,5 @@ export interface IButton {
     type: 'button' | 'submit';
     children: ReactNode;
     onClick?: () => void;
+    dataTestId?: string
 }

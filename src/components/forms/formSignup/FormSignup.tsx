@@ -59,54 +59,61 @@ const FormSignup = () => {
         placeholder="Имя"
         type="text"
         onChange={name.onChange}
+        dataTestId="name-input"
       />
       {name.isDirty && name.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       <Input
         value={surname.value}
         placeholder="Фамилия"
         type="text"
         onChange={surname.onChange}
+        dataTestId="surname-input"
       />
       {surname.isDirty && surname.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       <Input
         value={email.value}
         placeholder="Email"
         type="text"
         onChange={email.onChange}
+        dataTestId="email-input"
       />
       {email.isDirty && email.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       {email.isDirty && email.emailValid && (
-        <ErrorText>Не является email</ErrorText>
+        <ErrorText dataTestId="error">Не является email</ErrorText>
       )}
       <Input
         value={login.value}
         placeholder="Логин"
         type="text"
         onChange={login.onChange}
+        dataTestId="login-input"
       />
       {login.isDirty && login.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       <Input
         value={password.value}
         placeholder="Пароль"
         type="password"
         onChange={password.onChange}
+        dataTestId="password-input"
       />
       {password.isDirty && password.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       {password.isDirty && password.minLength && (
-        <ErrorText>Пароль должен содержать более 8 символов</ErrorText>
+        <ErrorText dataTestId="error">
+          Пароль должен содержать более 8 символов
+        </ErrorText>
       )}
       {password.isDirty && password.passwordValid && (
-        <ErrorText>
+        <ErrorText dataTestId="error">
           Пароль должен содержать: цифры, строчные и прописные символы латиницы
         </ErrorText>
       )}
@@ -115,16 +122,21 @@ const FormSignup = () => {
         placeholder="Пароль"
         type="password"
         onChange={repeatPassword.onChange}
+        dataTestId="repeatPassword-input"
       />
       {repeatPassword.isDirty && repeatPassword.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       {repeatPassword.isDirty && repeatPassword.value !== password.value && (
-        <ErrorText>Пароли не совпадают</ErrorText>
+        <ErrorText dataTestId="error">Пароли не совпадают</ErrorText>
       )}
       <div className={cl.FooterAuth}>
-        <Button type="submit">Войти</Button>
-        <Link to={"/"}>Назад</Link>
+        <Button type="submit" dataTestId="signup-btn">
+          Зарегистрироваться
+        </Button>
+        <Link to={"/"} data-testid="link-login">
+          Назад
+        </Link>
       </div>
     </FormWrapper>
   );

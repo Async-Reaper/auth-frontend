@@ -6,7 +6,8 @@ const initialState: IAuthSlice = {
     success: false,
     error: false,
     answerSuccess: '',
-    answerError: ''
+    answerError: '',
+    loginStatus: false
 }
 
 const authSlice = createSlice({
@@ -29,9 +30,12 @@ const authSlice = createSlice({
             state.error = true;
             state.success = false;
             state.answerError = action.payload;
+        },
+        setLoginStatus(state, action) {
+            state.loginStatus = action.payload
         }
     }
 })
 
 export default authSlice.reducer;
-export const { authFetch, authSuccess, authError } = authSlice.actions;
+export const { authFetch, authSuccess, authError, setLoginStatus } = authSlice.actions;

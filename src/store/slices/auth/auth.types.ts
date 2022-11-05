@@ -4,4 +4,5 @@ export interface IAuthSlice {
     error: boolean;
     answerSuccess: string;
     answerError: string;
+    loginStatus: boolean
 }

@@ -38,22 +38,28 @@ const FormLogin: FC = () => {
         placeholder="Логин"
         type="text"
         onChange={login.onChange}
+        dataTestId="login-input"
       />
       {login.isDirty && login.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       <Input
         value={password.value}
         placeholder="Пароль"
         type="password"
         onChange={password.onChange}
+        dataTestId="password-input"
       />
       {password.isDirty && password.isEmpty && (
-        <ErrorText>Поле является обязательным</ErrorText>
+        <ErrorText dataTestId="error">Поле является обязательным</ErrorText>
       )}
       <div className={cl.FooterAuth}>
-        <Button type="submit">Войти</Button>
-        <Link to={"/signup"}>Зарегистрироваться</Link>
+        <Button type="submit" dataTestId="login-btn">
+          Войти
+        </Button>
+        <Link to={"/signup"} data-testid="link-signup">
+          Зарегистрироваться
+        </Link>
       </div>
     </FormWrapper>
   );
