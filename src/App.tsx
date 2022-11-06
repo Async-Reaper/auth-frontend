@@ -1,4 +1,4 @@
-import AppRoute from "components/routes/AppRoute";
+import AppRoute from "components/appRoute/AppRoute";
 import { useEffect } from "react";
 import WebFont from "webfontloader";
 

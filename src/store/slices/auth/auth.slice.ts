@@ -23,6 +23,7 @@ const authSlice = createSlice({
             state.loading = false;
             state.error = false;
             state.success = true;
+            state.loginStatus = true;
             state.answerSuccess = action.payload;
         },
         authError(state, action) {

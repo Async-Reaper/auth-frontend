@@ -1,8 +1,8 @@
 import axios from "axios"
-import { authFetch, authSuccess } from "../../store/slices/auth/auth.slice"
-import { AppDispatch } from "../../store/store"
-import { IUserSignup } from "../../types/userTypes/IUserSignup"
-import { URL } from "../../utils/constants/url.constants"
+import { authFetch, authSuccess } from "../../../store/slices/auth/auth.slice"
+import { AppDispatch } from "../../../store/store"
+import { IUserSignup } from "../../../types/userTypes/IUserSignup"
+import { URL } from "../../../utils/constants/url.constants"
 
 export const signupUser = (data: IUserSignup) => {
     return async (dispatch: AppDispatch) => {

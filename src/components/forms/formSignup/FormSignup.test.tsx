@@ -16,6 +16,7 @@ describe("Testing login form", () => {
       }
     }
   });
+  afterEach(() => jest.clearAllMocks);
 
   test("Test input change", () => {
     testingRender(null, { route: "/signup" });

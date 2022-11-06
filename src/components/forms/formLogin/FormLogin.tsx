@@ -7,7 +7,7 @@ import Input from "components/globalComponents/input/Input";
 import { useTypedDispatch } from "hooks/useTypedDispatch";
 
 import { Link } from "react-router-dom";
-import { loginUser } from "services/api/login";
+import { loginUser } from "services/api/login/login";
 import { IUserLogin } from "types/userTypes/IUserLogin";
 
 import ErrorText from "components/globalComponents/errorText/ErrorText";

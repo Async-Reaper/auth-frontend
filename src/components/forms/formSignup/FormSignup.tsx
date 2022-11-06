@@ -6,7 +6,7 @@ import { useInput } from "hooks/useInput";
 import { useTypedDispatch } from "hooks/useTypedDispatch";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { signupUser } from "services/api/signup";
+import { signupUser } from "services/api/signup/signup";
 import { IUserSignup } from "types/userTypes/IUserSignup";
 import cl from "./FormSignup.module.scss";
 
