@@ -1,9 +1,8 @@
-import { cleanup, getByPlaceholderText, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { testingRender } from "helpers/testing/testingRender";
 import "@testing-library/jest-dom";
+import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import axios from "axios";
-import { experimentalStyled } from "@mui/material";
+import { testingRender } from "helpers/testing/testingRender";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -17,6 +16,8 @@ describe("Testing login form", () => {
       }
     }
   });
+
+  afterEach(() => jest.clearAllMocks);
 
   test("Test input change", () => {
     testingRender(null, { route: "/" });
